@@ -118,43 +118,58 @@ function add_nix(){
 
 function remove_node() {
 
+  echo "Removendo o nodeJS ... "
   if [ -d "/usr/local/bin/node" ]; then
-
+    
     sudo apt purge --auto-remove nodejs -y
     sudo rm /etc/apt/sources.list.d/nodesource.list*
 
-    echo "Node.js removido com sucesso!"
+    echo "Node.js removido com sucesso! Pressione qualquer tecla para continuar: "
+    read -n 1 -s
+
     apt_update
   else
-    echo "O Node.js não está instalado."
+    echo "O Node.js não está instalado. Pressione qualquer tecla para continuar: "
+    read -n 1 -s
   fi
 }
 
 function remove_nvm() {
-
+  
+  echo "Removendo o NVM..."
   if [ -d "$HOME/.nvm" ]; then
     rm -rf "$HOME/.nvm"
 
     sed -i '/nvm/d' "$HOME/.bashrc"
     sed -i '/nvm/d' "$HOME/.zshrc"
 
-    echo "NVM removido com sucesso!"
+    echo "NVM removido com sucesso! Pressione qualquer tecla para continuar: "
+    read -n 1 -s
+
     apt_update
   else
-    echo "O NVM não está instalado."
+    echo "O NVM não está instalado. Pressione qualquer tecla para continuar: "
+    read -n 1 -s
   fi
 }
 
 function remove_rust(){
+    
+    echo "Removendo rust ..."
     if command -v rustup; then
         rustup self uninstall
-        echo "Rust removido com sucesso!"
+        echo "Rust removido com sucesso!Pressione qualquer tecla para continuar: "
+        read -n 1 -s 
+
+        apt_update
     else
-        echo "Rust não está instalado."
+        echo "Rust não está instalado.Pressione qualquer tecla para continuar: "
+        read -n 1 -s
     fi
 }
 
 function remove_docker(){
+    echo "Removendo Docker ..."
     sudo apt-get remove --purge \
     docker \
     docker-engine \
@@ -163,10 +178,7 @@ function remove_docker(){
     echo "Se existiam versões do docker antigas elas foram removidas, pressione qualquer tecla para continuar :"
     read -n 1 -s
 
-    # Atualiza a lista de pacotes
     apt_update
-    echo "Atualização de reposítórios concluidas, pressione qualquer tecla para continuar :"
-    read -n 1 -s
 }
 
 
