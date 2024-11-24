@@ -207,18 +207,17 @@ function install_mysql_workbench(){
     fi
 
     if ! command -v mysql-workbench-community &> /dev/null; then
-      echo "Iremos instalar o MySQL Workbench, pressione qualquer tecla e aguarde, isso pode levar alguns minutos!"
-      read -n 1 -s
-      # Instala o MySQL Workbench
-      sudo snap install mysql-workbench-community
+        echo "Iremos instalar o MySQL Workbench, pressione qualquer tecla e aguarde, isso pode levar alguns minutos!"
+        read -n 1 -s
+        # Instala o MySQL Workbench
+        sudo snap install mysql-workbench-community
+        snap info mysql-workbench-community
+        echo "MySQL Workbench instalado com êxito, pressione qualquer tecla para continuar :"
+        read -n 1 -s
     else
-      echo "MySQL Workbench Community está instalado, pressione qualquer tecla para continuar :"
-      read -n 1 -s
+        echo "MySQL Workbench Community está instalado, pressione qualquer tecla para continuar :"
+        read -n 1 -s
     fi
-
-    snap info mysql-workbench-community
-    echo "MySQL Workbench instalado com êxito, pressione qualquer tecla para continuar :"
-    read -n 1 -s
 }
 
 function install_vscode(){
@@ -240,7 +239,9 @@ function install_insomnia(){
         add_flatpak
     fi
 
-    flatpak install flathub rest.insomnia.Insomnia
+    if ! flatpak list | grep -q rest.insomnia.Insomnia; then
+      flatpak install flathub rest.insomnia.Insomnia
+    fi
     
     flatpak info rest.insomnia.Insomnia 
     echo "Insomnia instalado com êxito, pressione qualquer tecla para continuar :"
@@ -254,7 +255,9 @@ function install_chrome(){
         add_flatpak
     fi
 
-    flatpak install flathub com.google.Chrome
+    if ! flatpak list | grep -q com.google.Chrome; then
+        flatpak install flathub com.google.Chrome
+    fi
 
     flatpak info com.google.Chrome 
     echo "Goole Chrome instalado com êxito, pressione qualquer tecla para continuar :"
