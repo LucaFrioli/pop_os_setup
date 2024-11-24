@@ -306,10 +306,8 @@ function install_mysql_workbench(){
         add_snap
     fi
 
+    echo "Instalando o MySQL Workbench, isso pode levar alguns minutos ..."
     if ! command -v mysql-workbench-community &> /dev/null; then
-        echo "Iremos instalar o MySQL Workbench, pressione qualquer tecla e aguarde, isso pode levar alguns minutos!"
-        read -n 1 -s
-        # Instala o MySQL Workbench
         sudo snap install mysql-workbench-community
         snap info mysql-workbench-community
         echo "MySQL Workbench instalado com êxito."
@@ -324,15 +322,21 @@ function install_mysql_workbench(){
 
 function install_vscode(){
 
-    echo "Instalando Visual Studio Code, aguarde isso pode levar alguns minutos..."
+    if ! command -v snap &> /dev/null; then
+        echo "Snap não está disponível, instalando Snap... "
+        add_snap
+    fi
+
+    echo "Instalando Visual Studio Code, aguarde isso pode levar alguns minutos ..."
     if ! command -v code &> /dev/null; then
-        curl -o vscode.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
-        sudo dpkg -i vscode.deb
-        sudo apt --fix-broken install
+
+        sudo snap install code --classic
 
         if command -v code &> /dev/null; then
             echo "Visual Studio code instalado com êxito:"
-            dpkg -l | grep code
+            snap info code
+        else
+            echo "Falha ao instalar o Visual Studio Code."
         fi
 
     else
