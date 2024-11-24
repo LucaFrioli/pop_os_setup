@@ -26,7 +26,7 @@ function add_curl(){
 
 function add_flatpak(){
     apt_update
-    
+
     if ! command -v flatpak &> /dev/null; then
         sudo apt install flatpak
         flatpak --version
@@ -196,5 +196,67 @@ function install_docker(){
     # Passo 11: Atualiza a lista de pacotes e progrmas instalados
     apt_update_upgrade
     echo "Pacotes de repositórios atualizados com sucesso, pressione qualquer tecla para continuar :"
+    read -n 1 -s
+}
+
+function install_mysql_workbench(){
+
+    if ! command -v snap &> /dev/null; then
+        echo "Snap não está disponível, instalando Snap... "
+        add_snap
+    fi
+
+    if ! command -v mysql-workbench-community &> /dev/null; then
+      echo "Iremos instalar o MySQL Workbench, pressione qualquer tecla e aguarde, isso pode levar alguns minutos!"
+      read -n 1 -s
+      # Instala o MySQL Workbench
+      sudo snap install mysql-workbench-community
+    else
+      echo "MySQL Workbench Community está instalado, pressione qualquer tecla para continuar :"
+      read -n 1 -s
+    fi
+
+    snap info mysql-workbench-community
+    echo "MySQL Workbench instalado com êxito, pressione qualquer tecla para continuar :"
+    read -n 1 -s
+}
+
+function install_vscode(){
+
+    if ! command -v code; then
+        curl -o vscode.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+        sudo dpkg -i vscode.deb
+        sudo apt --fix-broken install
+    else
+        echo "Visual Studio Code está instalado, pressione qualquer tecla para continuar :"
+        read -n 1 -s
+    fi
+}
+
+function install_insomnia(){
+
+    if ! command -v flatpak &> /dev/null; then
+        echo "Flatpak não está disponível, instalando Flatpak... "
+        add_flatpak
+    fi
+
+    flatpak install flathub rest.insomnia.Insomnia
+    
+    flatpak info rest.insomnia.Insomnia 
+    echo "Insomnia instalado com êxito, pressione qualquer tecla para continuar :"
+    read -n 1 -s
+}
+
+function install_chrome(){
+    
+    if ! command -v flatpak &> /dev/null; then
+        echo "Flatpak não está disponível, instalando Flatpak... "
+        add_flatpak
+    fi
+
+    flatpak install flathub com.google.Chrome
+
+    flatpak info com.google.Chrome 
+    echo "Goole Chrome instalado com êxito, pressione qualquer tecla para continuar :"
     read -n 1 -s
 }
