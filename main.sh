@@ -50,6 +50,7 @@ function add_flatpak(){
     apt_update
 
     if ! command -v flatpak &> /dev/null; then
+        echo "Instalando flatpak ..."
         sudo apt install flatpak
         flatpak --version
         
@@ -75,18 +76,43 @@ function add_snap(){
     apt_update
 
     if ! command -v snap &> /dev/null; then
+        echo "Instalando snap ..."
         sudo apt install snapd
-        snap --version
+
+        if command -v snap &> /dev/null; then
+            snap --version
+            echo "Snap instalado com êxito, pressione qualquer tecla para continuar: "
+            read -n 1 -s
+        fi
+
         apt_update
     else
         echo "Snap Já instalado !"
         snap --version
+        
+        echo "Pressione qualquer tecla para continuar: "
+        read -n 1 -s
     fi
 }
 
 function add_nix(){
-    sh <(curl -L https://nixos.org/nix/install) --daemon
-    nix --version
+    if ! command -v nix &>/dev/null; then
+        sh <(curl -L https://nixos.org/nix/install) --daemon
+        if command -v nix &> /dev/null; then
+            echo "Nix instalado com êxito: "
+            nix --version
+            echo "Pressione qualquer tecla para continuar: "
+            read -n 1 -s
+        else
+            echo "Erro ao tentar instalar o nix! Pressione qualquer tecla para continuar: "
+            read -n 1 -s
+        fi
+    else
+        echo "Nix já instalado:"
+        nix --version
+        echo "Pressione qualquer tecla para continuar: "
+        read -n 1 -s
+    fi
 }
 
 
