@@ -24,6 +24,24 @@ function add_curl(){
     fi
 }
 
+function add_flatpak(){
+    apt_update
+    
+    if ! command -v flatpak &> /dev/null; then
+        sudo apt install flatpak
+        flatpak --version
+        
+        if command -v flatpak &> /dev/null; then
+            flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+        else
+            echo "Erro ao instalar o flatpak !"
+        fi
+    else
+        echo "flatpak já instalado !"
+        flatpak --version
+    fi
+}
+
 function add_snap(){
     apt_update
 
