@@ -312,24 +312,34 @@ function install_mysql_workbench(){
         # Instala o MySQL Workbench
         sudo snap install mysql-workbench-community
         snap info mysql-workbench-community
-        echo "MySQL Workbench instalado com êxito, pressione qualquer tecla para continuar :"
+        echo "MySQL Workbench instalado com êxito."
         read -n 1 -s
     else
-        echo "MySQL Workbench Community está instalado, pressione qualquer tecla para continuar :"
-        read -n 1 -s
+        echo "MySQL Workbench Community está instalado."
     fi
+
+    echo "Pressione qualquer tecla para continuar :"
+    read -n 1 -s
 }
 
 function install_vscode(){
 
-    if ! command -v code; then
+    echo "Instalando Visual Studio Code, aguarde isso pode levar alguns minutos..."
+    if ! command -v code &> /dev/null; then
         curl -o vscode.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
         sudo dpkg -i vscode.deb
         sudo apt --fix-broken install
+
+        if command -v code &> /dev/null; then
+            echo "Visual Studio code instalado com êxito:"
+            dpkg -l | grep code
+        fi
+
     else
-        echo "Visual Studio Code está instalado, pressione qualquer tecla para continuar :"
-        read -n 1 -s
+        echo "Visual Studio Code já está instalado."
     fi
+    echo "Pressione qualquer tecla para continuar:"
+    read -n 1 -s
 }
 
 function install_insomnia(){
@@ -339,12 +349,20 @@ function install_insomnia(){
         add_flatpak
     fi
 
+    echo "Instalando Insomnia ..."
     if ! flatpak list | grep -q rest.insomnia.Insomnia; then
-      flatpak install flathub rest.insomnia.Insomnia
+        flatpak install flathub rest.insomnia.Insomnia
+        if flatpak list | grep -q rest.insomnia.Insomnia; then
+            echo "Insomnia instalado com êxito"
+            flatpak info rest.insomnia.Insomnia 
+        else
+            echo "Erro na instalação do Insomnia. Verifique manualmente após a conclusão do script."
+        fi
+    else
+        echo "Insomnia já está instalado."
     fi
-    
-    flatpak info rest.insomnia.Insomnia 
-    echo "Insomnia instalado com êxito, pressione qualquer tecla para continuar :"
+
+    echo "Pressione qualquer tecla para continuar :"
     read -n 1 -s
 }
 
@@ -355,11 +373,20 @@ function install_chrome(){
         add_flatpak
     fi
 
+    echo "Instalando google chrome ..."
     if ! flatpak list | grep -q com.google.Chrome; then
         flatpak install flathub com.google.Chrome
+
+        if flatpak list | grep -q com.google.Chrome; then       
+            echo "Goole Chrome instalado com êxito"
+            flatpak info com.google.Chrome
+        else
+            echo "Erro na instalação do Google Chrome. Verifique manualmente após a conclusão do script"
+        fi 
+    else
+        echo "Google Chrome já está instalado !"
     fi
 
-    flatpak info com.google.Chrome 
-    echo "Goole Chrome instalado com êxito, pressione qualquer tecla para continuar :"
+    echo "pressione qualquer tecla para continuar :"
     read -n 1 -s
 }
