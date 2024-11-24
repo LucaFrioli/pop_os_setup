@@ -390,3 +390,51 @@ function install_chrome(){
     echo "pressione qualquer tecla para continuar :"
     read -n 1 -s
 }
+
+function install_tools() {
+    local tools=("gparted" "timeshift" "htop" "neofetch")
+    
+    apt_update
+    
+    echo "Verificando ferramentas para instalação..."
+    for tool in "${tools[@]}"; do
+        if ! command -v "$tool" &> /dev/null; then
+            echo "Instalando $tool..."
+            sudo apt install -y "$tool"
+            if command -v "$tool" &> /dev/null; then
+                echo "$tool instalado com sucesso."
+            else
+                echo "Erro ao instalar $tool. Verifique manualmente."
+            fi
+        else
+            echo "$tool já está instalado."
+        fi
+    done
+    
+    echo "As ferramentas utilitárias foram verificadas."
+    echo "Pressione qualquer tecla para continuar..."
+    read -n 1 -s
+}
+
+
+
+apt_update_upgrade
+add_curl
+add_snap
+add_nix
+
+apt_update_upgrade
+remove_node
+remove_nvm
+remove_rust
+remove_docker
+
+apt_update_upgrade
+install_rust
+install_nvm
+install_vscode
+install_docker
+install_insomnia
+install_mysql_workbench
+install_chrome
+install_tools
