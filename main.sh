@@ -170,28 +170,50 @@ function remove_rust(){
 
 function remove_docker(){
     echo "Removendo Docker ..."
-    sudo apt-get remove --purge \
-    docker \
-    docker-engine \
-    docker.io \
-    containerd runc -y
-    echo "Se existiam versões do docker antigas elas foram removidas, pressione qualquer tecla para continuar :"
-    read -n 1 -s
+    if command -v docker; then
+        sudo apt-get remove --purge \
+        docker \
+        docker-engine \
+        docker.io \
+        containerd runc -y
+        echo "Se existiam versões do docker antigas elas foram removidas, pressione qualquer tecla para continuar :"
+        read -n 1 -s
 
-    apt_update
+        apt_update
+    else
+        echo "Docker não instalado, pressione qualquer tecla para continuar: "
+        read -n 1 -s
+    fi
 }
 
 
 function install_nvm(){
+    echo "Instalando nvm ..."
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
 
    if command -v nvm; then
+        echo "Nvm instalada com êxito: "
         nvm --version
-        echo "Instalando a verção do node lts"
-        nvm install --lts && node --version && npm --version
+        
+        echo "Pressione qualquer tecla para inciar a instalação da versão lts do node: "
+        read -n 1 -s
+
+        echo "Instalando a versão do node lts ..."
+        nvm install --lts 
+        
+        if command -v node && command -v npm; then
+            echo "Node instalado com êxito: "
+            node --version && npm --version
+            echo "Pressione qualquer tecla para continuar:"
+            read -n 1 -s
+        else
+            echo "Algum erro ocorreu ao tentar instalar o node, após o término da execução do script averigue."
+            echo "Pressione qualquer tecla para continuar: "
+            read -n 1 -s
+        fi
    else
         echo "Erro ao instalar a nvm"
    fi
