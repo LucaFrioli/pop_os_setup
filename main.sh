@@ -211,24 +211,37 @@ function install_nvm(){
             read -n 1 -s
         else
             echo "Algum erro ocorreu ao tentar instalar o node, após o término da execução do script averigue."
-            echo "Pressione qualquer tecla para continuar: "
-            read -n 1 -s
         fi
    else
         echo "Erro ao instalar a nvm"
    fi
+
+   echo "Pressione qualquer tecla para continuar: "
+   read -n 1 -s
 }
 
 function install_rust(){
 
+    echo "Instalando rust ..."
     if ! command -v rustup; then
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-        rustup --version
-        rustc --version
-        cargo --version
+        
+        if command -v rustc; then
+            echo "Rust instalado com êxito"
+            echo "Versões instaladas :"
+            rustup --version
+            rustc --version
+            cargo --version
+        else
+            echo "Erro ao instalar Rust. Verifique o processo manualmente."
+            
+        fi
     else
-        echo "Erro ao instalar rust"
+        echo "Rustup já instalado."
     fi
+    
+    echo "Pressione qualquer tecla para continuar: "
+    read -n 1 -s
 }
 
 function install_docker(){
@@ -284,8 +297,6 @@ function install_docker(){
 
     # Passo 11: Atualiza a lista de pacotes e progrmas instalados
     apt_update_upgrade
-    echo "Pacotes de repositórios atualizados com sucesso, pressione qualquer tecla para continuar :"
-    read -n 1 -s
 }
 
 function install_mysql_workbench(){
