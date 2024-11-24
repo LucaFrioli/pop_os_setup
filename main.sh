@@ -39,8 +39,8 @@ function add_curl(){
 
         apt_update
     else
-        echo "crul já instalado !"
-        crul --version
+        echo "curl já instalado !"
+        curl --version
         echo "Pressione qualquer tecla para continuar: "
         read -n 1 -s
     fi
