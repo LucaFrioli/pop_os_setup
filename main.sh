@@ -3,11 +3,21 @@
 #### comando de espera read -n 1 -s
 
 function apt_update(){
+    echo "Atualizando repositórios apt ..."   
     sudo apt update
+   
+    echo "Repositórios atualizados com êxito, pressione qualquer tecla para continuar :"
+    read -n 1 -s
 }
 
 function apt_update_upgrade(){
-    apt_update && sudo apt upgrade -y
+    apt_update 
+    
+    echo "Atualizando pacotes apt ..." 
+    sudo apt upgrade -y 
+    
+    echo "Pacotes atualizados com êxito, pressione qualquer tecla para continuar :"
+    read -n 1 -s
 }
 
 
@@ -15,12 +25,24 @@ function add_curl(){
     apt_update
 
     if ! command -v curl &> /dev/null ; then
+        echo "Instalando curl ..."
         sudo apt install curl
-        curl --version
+
+        if command -v curl &> /dev/null ; then
+            curl --version
+            echo "Curl instalado com êxito, pressione qualquer tecla para continuar :"
+            read -n 1 -s
+        else
+            echo "Erro ao instalar Curl ! Pressione qualquer tecla para continuar: "
+            read -n 1 -s
+        fi
+
         apt_update
     else
         echo "crul já instalado !"
         crul --version
+        echo "Pressione qualquer tecla para continuar: "
+        read -n 1 -s
     fi
 }
 
@@ -32,13 +54,20 @@ function add_flatpak(){
         flatpak --version
         
         if command -v flatpak &> /dev/null; then
+            echo "Adicionando flathub ..."
             flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+            echo "Repositórios adicionados com êxito, pressione qualquer tecla para continuar: "
+            read -n 1 -s
         else
-            echo "Erro ao instalar o flatpak !"
+            echo "Erro ao instalar o flatpak ! Pressione qualquer tecla para continuar: "
+            read -n 1 -s
         fi
     else
         echo "flatpak já instalado !"
         flatpak --version
+        echo "Pressione qualquer tecla para continuar: "
+        read -n 1 -s
     fi
 }
 
