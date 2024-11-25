@@ -36,7 +36,7 @@ Segue uma lista do que o script estará instalando. A lista consiste na bibliogr
 
 ## **IT:**
 
-**NOTA: Lo script è destinato alla prima configurazione su macchine appena formattate o con un sistema appena configuratti. Se questo script viene eseguito in ambienti di produzione, potrebbe causare la perdita dei "containers" Docker e tempi di inattività dei server NodeJS attivi.**
+**NOTA: Lo script è destinato alla prima configurazione su macchine appena formattate o con un sistema appena configurati. Se questo script viene eseguito in ambienti di produzione, potrebbe causare la perdita dei "containers" Docker e tempi di inattività dei server NodeJS attivi.**
 
 Questo "repository" è una preconfigurazione per i sistemi basati su Ubuntu, creata pensando a Pop!_os, con lo scopo di facilitare l'istallazione di strumenti e linguaggi di base per lo sviluppo. Questo script è stato completamente creato sulla base del mio flusso di lavoro, destinato solo all'esecuzione su sistemi che siano stati formattati di recente o su sistemi appena istallati.
 
@@ -54,7 +54,7 @@ Di seguito è riportato un elenco di tutto ciò che verrà istallato dallo scrip
 
 **PT-BR: Segue a lista de ferramentas que estão sendo instaladas. Clique em cada uma delas para ser redirecionado para a página de onde elas estarão sendo instaladas, e em docs para suas documentações.**
 
-**IT: Di seguito è riportato l'elenco degli strumenti in fase di istallazione. Fai clic su ciascuno di essi per essere reindirizzato alla pagina in cui vengono installati e ai relativi docs per la documentazione.**
+**IT: Di seguito è riportato l'elenco degli strumenti in fase di istallazione. Fai clic su ciascuno di essi per essere reindirizzato alla pagina in cui vengono configurati e ai relativi docs per la documentazione.**
 
 - [**Snap**](https://snapcraft.io/docs/installing-snap-on-pop): [docs](https://snapcraft.io/docs)
 - [**Nix**](https://nixos.org/download/): [docs](https://nix.dev/manual/nix/2.18/)
