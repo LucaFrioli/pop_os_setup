@@ -309,9 +309,13 @@ function install_mysql_workbench(){
     echo "Instalando o MySQL Workbench, isso pode levar alguns minutos ..."
     if ! command -v mysql-workbench-community &> /dev/null; then
         sudo snap install mysql-workbench-community
-        snap info mysql-workbench-community
-        echo "MySQL Workbench instalado com êxito."
-        read -n 1 -s
+
+        if command -v mysql-workbench-community &> /dev/null; then
+            snap info mysql-workbench-community
+            echo "MySQL Workbench instalado com êxito."
+        else
+            echo "Falha ao instalar Mysql workbench Community !"
+        fi
     else
         echo "MySQL Workbench Community está instalado."
     fi
