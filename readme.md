@@ -24,7 +24,7 @@ Here is a list of what the script will be installing. The list consists of the b
 
 **NOTA: O script é destinado à primeira configuração de máquinas recentemente formatadas ou com um sistema recém-instalado. Se este script for executado em ambientes de produção, pode resultar na perda de contêineres Docker e no tempo de inatividade de servidores NodeJS ativos.**
 
-Este repositório é uma pré-configuração para sistemas baseados em Ubuntu. Neste caso, ele foi criado com o Pop_os em mente. Ele visa facilitar a instalação de ferramentas e linguagens básicas para desenvolvimento. Este script é completamente opinativo para meu fluxo de trabalho. Destinado apenas à execução em sistemas que foram recentemente formatados ou sistema recém-instalado.
+Este repositório é uma pré-configuração para sistemas baseados em Ubuntu. Neste caso, ele foi criado com o Pop_os em mente. Ele visa facilitar a instalação de ferramentas e linguagens básicas para desenvolvimento. Este script é completamente opinativo para meu fluxo de trabalho. Destinado apenas à execução em sistemas que foram recentemente formatados ou sistema recém-instalados.
 
 O script tem como objetivo, instalar linguagens e ferramentas de desenvolvimento, assim como utilitários para o sistema operacional. A ideia é produzir o mais rápido possível após a instalação do sistema operacional. Ele só não é 100% automatizado, pois visa além de instalar as ferramentas, deixar bem claro ao usuário o que está ocorrendo.
 
@@ -36,13 +36,13 @@ Segue uma lista do que o script estará instalando. A lista consiste na bibliogr
 
 ## **IT:**
 
-**NOTA: Lo script è destinato alla prima configurazione su macchine appena formattate o con un sistema appena installato. Se questo script viene eseguito in ambienti di produzione, potrebbe causare la perdita dei "conteiners" Docker e tempi di inattività dei server NodeJS attivi.**
+**NOTA: Lo script è destinato alla prima configurazione su macchine appena formattate o con un sistema appena configuratti. Se questo script viene eseguito in ambienti di produzione, potrebbe causare la perdita dei "containers" Docker e tempi di inattività dei server NodeJS attivi.**
 
-Questo repository è una preconfigurazione per i sistemi basati su Ubuntu. Creata pensando a Pop!_os, con lo scopo di facilitare l'installazione di strumenti e linguaggi di base per lo sviluppo. Questo script è stato completamente creato sulla base del mio flusso di lavoro. Destinato solo all'esecuzione su sistemi che siano stati formattati di recente o su sistemi appena installati.
+Questo "repository" è una preconfigurazione per i sistemi basati su Ubuntu, creata pensando a Pop!_os, con lo scopo di facilitare l'istallazione di strumenti e linguaggi di base per lo sviluppo. Questo script è stato completamente creato sulla base del mio flusso di lavoro, destinato solo all'esecuzione su sistemi che siano stati formattati di recente o su sistemi appena istallati.
 
-Lo script mira a installare linguaggi e strumenti di sviluppo, nonché "utilities" per il sistema operativo. L'idea è di essere produttivo il più rapidamente possibile dopo aver installato il sistema operativo. Semplicemente non è automatizzato al 100%, poiché mira, oltre a installare gli strumenti, a rendere molto chiaro all'utente cosa stia succedendo.
+Lo script mira ad istallare linguaggi e strumenti di sviluppo, nonché "utilities" per il sistema operativo. L'idea è di essere produttivo il più rapidamente possibile dopo aver configurato il sistema operativo. Semplicemente non è automatizzato al 100%, poiché mira, oltre a impostare gli strumenti, a rendere molto chiaro all'utente cosa stia succedendo.
 
-Di seguito è riportato un elenco di tutto ciò che verrà installato dallo script. L'elenco è costituito dalla bibliografia che ho utilizzato come ispirazione per le tecniche di installazione per ciascuno dei software e della relativa documentazione.
+Di seguito è riportato un elenco di tutto ciò che verrà istallato dallo script. L'elenco è costituito dalla bibliografia che ho utilizzato come ispirazione per le tecniche di implementazione per ciascuno dei software e della relativa documentazione.
 
 - [Vedere l'elenco dei programmi, strumenti e linguaggi installati con questo script](#installed-programs-and-languages--programas-e-linguagens-instalados--programmi-e-lingue-installati)
 
@@ -54,13 +54,13 @@ Di seguito è riportato un elenco di tutto ciò che verrà installato dallo scri
 
 **PT-BR: Segue a lista de ferramentas que estão sendo instaladas. Clique em cada uma delas para ser redirecionado para a página de onde elas estarão sendo instaladas, e em docs para suas documentações.**
 
-**IT: Di seguito è riportato l'elenco degli strumenti in fase di installazione. Fai clic su ciascuno di essi per essere reindirizzato alla pagina in cui vengono installati e ai relativi docs per la documentazione.**
+**IT: Di seguito è riportato l'elenco degli strumenti in fase di istallazione. Fai clic su ciascuno di essi per essere reindirizzato alla pagina in cui vengono installati e ai relativi docs per la documentazione.**
 
 - [**Snap**](https://snapcraft.io/docs/installing-snap-on-pop): [docs](https://snapcraft.io/docs)
 - [**Nix**](https://nixos.org/download/): [docs](https://nix.dev/manual/nix/2.18/)
 - [**Flatpak**](https://flatpak.org/setup/Pop!_OS): [docs](https://docs.flatpak.org/en/latest/introduction.html)
 - [**Nvm**](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating): [docs](https://github.com/nvm-sh/nvm/blob/master/README.md)
-- **NodeJs**(EG: note: installed via nvm. PT-BR: obs: instalado via nvm. IT: nota: installato tramite nvm): [docs](https://nodejs.org/pt/learn/getting-started/introduction-to-nodejs)
+- **NodeJs**(EG: note: installed via nvm. PT-BR: obs: instalado via nvm. IT: nota: istallato tramite nvm): [docs](https://nodejs.org/pt/learn/getting-started/introduction-to-nodejs)
 - [**Rust**](https://doc.rust-lang.org/book/ch01-01-installation.html): [docs](https://doc.rust-lang.org/book/title-page.html)
 - [**Docker**](https://docs.docker.com/desktop/setup/install/linux/ubuntu/): [docs](https://docs.docker.com/?_gl=1*14yltxd*_gcl_au*ODcyNDA1Njk2LjE3MzI1NTUwMTA.*_ga*OTk2MjY3MTM3LjE3MzI1NTM2MDY.*_ga_XJWPQMJYHQ*MTczMjU1MzYwNS4xLjEuMTczMjU1NTAxMi41OC4wLjA.)
 - [**Visual Studio Code**](https://snapcraft.io/code): [docs](https://code.visualstudio.com/docs)
