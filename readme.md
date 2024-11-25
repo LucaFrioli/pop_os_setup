@@ -4,20 +4,19 @@
 - [Documentação em português](#pt-br)
 - [Documentazione in italiano](#it)
 
-- [See the list of programs, tools and languages ​​installed with this script](#installed-programs-and-languages--programas-e-linguagens-instalados--programmi-e-lingue-installati)
-- [Veja a lista de programas, ferramentas e linguagens instalados com este script](#installed-programs-and-languages--programas-e-linguagens-instalados--programmi-e-lingue-installati)
-- [Vedere l'elenco dei programmi, strumenti e linguaggi installati con questo script](#installed-programs-and-languages--programas-e-linguagens-instalados--programmi-e-lingue-installati)
-
-
 ---
 
 ## **EN:**
 
-**NOTE: the script is intended for the first setup of recently formatted machines or with a newly installed system. If this script is executed in production environments, it may result in the loss of Docker containers and the downtime of active NodeJS servers.**
+**NOTE: The script is intended for the first setup of recently formatted machines or machines with a newly installed system. If this script is run in production environments, it may result in the loss of Docker containers and downtime of active NodeJS servers.**
 
-This repository is a pre-setup for Ubuntu-based systems. In this case, it was created with Pop_os in mind. It aims to facilitate the installation of basic tools and languages ​​for development. This script is completely opinionated for my workflow. Only intended for execution on systems that have been recently formatted or newly installed system.
+This repository is a pre-configuration for Ubuntu-based systems. In this case, it was created with Pop_os in mind. It aims to facilitate the installation of basic development tools and languages. This script is completely opinionated for my workflow. It is intended only to be run on systems that have been recently formatted or a newly installed system.
 
-The script aims to install languages ​​and development tools, as well as utilities for the operating system. The idea is to produce as quickly as possible after the operating system is installed. It is not 100% automated, however, as it aims to install the tools and make it clear to the user what is happening with the system.
+The script aims to install development languages ​​and tools, as well as utilities for the operating system. The idea is to produce as quickly as possible after the operating system installation. It is not 100% automated, however, as it aims to install the tools and make it very clear to the user what is happening.
+
+Here is a list of what the script will be installing. The list consists of the bibliography I used for inspiration and installation techniques for each software, and its documentation below.
+
+- [See the list of programs, tools and languages ​​installed with this script](#installed-programs-and-languages--programas-e-linguagens-instalados--programmi-e-lingue-installati)
 
 ---
 
@@ -27,7 +26,11 @@ The script aims to install languages ​​and development tools, as well as uti
 
 Este repositório é uma pré-configuração para sistemas baseados em Ubuntu. Neste caso, ele foi criado com o Pop_os em mente. Ele visa facilitar a instalação de ferramentas e linguagens básicas para desenvolvimento. Este script é completamente opinativo para meu fluxo de trabalho. Destinado apenas à execução em sistemas que foram recentemente formatados ou sistema recém-instalado.
 
-O script visa, instalar linguagens e ferramentas de desenvolvimento, assim como utilitários para o sistema operacional. A ideia é produzir o mais rápido possível após a instalação do sistema operacional. Ele só não é 100% automatizado, pois visa além de instalar as ferramentas, deixar bem claro ao usuário o que está ocorrendo com o sistema.
+O script tem como objetivo, instalar linguagens e ferramentas de desenvolvimento, assim como utilitários para o sistema operacional. A ideia é produzir o mais rápido possível após a instalação do sistema operacional. Ele só não é 100% automatizado, pois visa além de instalar as ferramentas, deixar bem claro ao usuário o que está ocorrendo.
+
+Segue uma lista do que o script estará instalando. A lista consiste na bibliografia que utilizei para inspiração e técnica de instalação de cada um dos softwares, e sua documentação logo em seguida.
+
+- [Veja a lista de programas, ferramentas e linguagens instalados com este script](#installed-programs-and-languages--programas-e-linguagens-instalados--programmi-e-lingue-installati)
 
 ---
 
@@ -37,7 +40,11 @@ O script visa, instalar linguagens e ferramentas de desenvolvimento, assim como 
 
 Questo repository è una preconfigurazione per i sistemi basati su Ubuntu. In questo caso, è stato creato pensando a Pop_os. Ha lo scopo di facilitare l'installazione di strumenti e linguaggi di base per lo sviluppo. Questo script è completamente supponente per il mio flusso di lavoro. Destinato solo all'esecuzione su sistemi che sono stati formattati di recente o su sistemi appena installati.
 
-Lo script mira a installare linguaggi e strumenti di sviluppo, nonché utilità per il sistema operativo. L'idea è di produrre il più rapidamente possibile dopo aver installato il sistema operativo. Semplicemente non è automatizzato al 100%, poiché mira, oltre a installare gli strumenti, a rendere molto chiaro all'utente cosa sta succedendo al sistema.
+Lo script mira a installare linguaggi e strumenti di sviluppo, nonché utilità per il sistema operativo. L'idea è di produrre il più rapidamente possibile dopo aver installato il sistema operativo. Semplicemente non è automatizzato al 100%, poiché mira, oltre a installare gli strumenti, a rendere molto chiaro all'utente cosa sta succedendo.
+
+Di seguito è riportato un elenco di ciò che verrà installato dallo script. L'elenco è costituito dalla bibliografia che ho utilizzato come ispirazione e dalle tecniche di installazione per ciascuno dei software, e dalla relativa documentazione subito dopo.
+
+- [Vedere l'elenco dei programmi, strumenti e linguaggi installati con questo script](#installed-programs-and-languages--programas-e-linguagens-instalados--programmi-e-lingue-installati)
 
 ---
 
