@@ -36,13 +36,13 @@ Segue uma lista do que o script estará instalando. A lista consiste na bibliogr
 
 ## **IT:**
 
-**NOTA: lo script è destinato alla prima configurazione su macchine appena formattate o con un sistema appena installato. Se questo script viene eseguito in ambienti di produzione, potrebbe causare la perdita dei contenitori Docker e tempi di inattività dei server NodeJS attivi.**
+**NOTA: lo script è destinato alla prima configurazione su macchine appena formattate o con un sistema appena installato. Se questo script viene eseguito in ambienti di produzione, potrebbe causare la perdita dei "conteiners" Docker e tempi di inattività dei server NodeJS attivi.**
 
-Questo repository è una preconfigurazione per i sistemi basati su Ubuntu. In questo caso, è stato creato pensando a Pop_os. Ha lo scopo di facilitare l'installazione di strumenti e linguaggi di base per lo sviluppo. Questo script è completamente supponente per il mio flusso di lavoro. Destinato solo all'esecuzione su sistemi che sono stati formattati di recente o su sistemi appena installati.
+Questo repository è una preconfigurazione per i sistemi basati su Ubuntu. Creata pensando a Pop!_os, con lo scopo di facilitare l'installazione di strumenti e linguaggi di base per lo sviluppo. Questo script è stato completamente creato sul'abase del mio flusso di lavoro. Destinato solo all'esecuzione su sistemi che siano stati formattati di recente o su sistemi appena installati.
 
-Lo script mira a installare linguaggi e strumenti di sviluppo, nonché utilità per il sistema operativo. L'idea è di produrre il più rapidamente possibile dopo aver installato il sistema operativo. Semplicemente non è automatizzato al 100%, poiché mira, oltre a installare gli strumenti, a rendere molto chiaro all'utente cosa sta succedendo.
+Lo script mira a installare linguaggi e strumenti di sviluppo, nonché "utilites" per il sistema operativo. L'idea è di essere produttivo il più rapidamente possibile dopo aver installato il sistema operativo. Semplicemente non è automatizzato al 100%, poiché mira, oltre a installare gli strumenti, a rendere molto chiaro all'utente cosa stia succedendo.
 
-Di seguito è riportato un elenco di ciò che verrà installato dallo script. L'elenco è costituito dalla bibliografia che ho utilizzato come ispirazione e dalle tecniche di installazione per ciascuno dei software, e dalla relativa documentazione subito dopo.
+Di seguito è riportato un elenco di tutto ciò che verrà installato dallo script. L'elenco è costituito dalla bibliografia che ho utilizzato come ispirazione e dalle tecniche di installazione per ciascuno dei software, e della relativa documentazione.
 
 - [Vedere l'elenco dei programmi, strumenti e linguaggi installati con questo script](#installed-programs-and-languages--programas-e-linguagens-instalados--programmi-e-lingue-installati)
 
@@ -54,7 +54,7 @@ Di seguito è riportato un elenco di ciò che verrà installato dallo script. L'
 
 **PT-BR: Segue a lista de ferramentas que estão sendo instaladas. Clique em cada uma delas para ser redirecionado para a página de onde elas estarão sendo instaladas, e em docs para suas documentações.**
 
-**IT: Di seguito è riportato l'elenco degli strumenti in fase di installazione. Fai clic su ciascuno di essi per essere reindirizzato alla pagina in cui vengono installati e ai docs per la loro documentazione.**
+**IT: Di seguito è riportato l'elenco degli strumenti in fase di installazione. Fai clic su ciascuno di essi per essere reindirizzato alla pagina in cui vengono installati e ai relative docs per la documentazione.**
 
 - [**Snap**](https://snapcraft.io/docs/installing-snap-on-pop): [docs](https://snapcraft.io/docs)
 - [**Nix**](https://nixos.org/download/): [docs](https://nix.dev/manual/nix/2.18/)
