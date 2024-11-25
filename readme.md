@@ -1,8 +1,13 @@
 # Pop!_os setup
 
-- [documentation in english](#en)
-- [documentação em português](#pt-br)
-- [documentazione in italiano](#it)
+- [Documentation in english](#en)
+- [Documentação em português](#pt-br)
+- [Documentazione in italiano](#it)
+
+- [See the list of programs, tools and languages ​​installed with this script](#installed-programs-and-languages--programas-e-linguagens-instalados--programmi-e-lingue-installati)
+- [Veja a lista de programas, ferramentas e linguagens instalados com este script](#installed-programs-and-languages--programas-e-linguagens-instalados--programmi-e-lingue-installati)
+- [Vedere l'elenco dei programmi, strumenti e linguaggi installati con questo script](#installed-programs-and-languages--programas-e-linguagens-instalados--programmi-e-lingue-installati)
+
 
 ---
 
@@ -33,3 +38,29 @@ O script visa, instalar linguagens e ferramentas de desenvolvimento, assim como 
 Questo repository è una preconfigurazione per i sistemi basati su Ubuntu. In questo caso, è stato creato pensando a Pop_os. Ha lo scopo di facilitare l'installazione di strumenti e linguaggi di base per lo sviluppo. Questo script è completamente supponente per il mio flusso di lavoro. Destinato solo all'esecuzione su sistemi che sono stati formattati di recente o su sistemi appena installati.
 
 Lo script mira a installare linguaggi e strumenti di sviluppo, nonché utilità per il sistema operativo. L'idea è di produrre il più rapidamente possibile dopo aver installato il sistema operativo. Semplicemente non è automatizzato al 100%, poiché mira, oltre a installare gli strumenti, a rendere molto chiaro all'utente cosa sta succedendo al sistema.
+
+---
+
+## Installed programs and languages / Programas e linguagens instalados / Programmi e lingue installati
+
+**EN: Below is a list of tools that are being installed. Click on each one to be redirected to the page where they are being installed, and to docs for their documentation.**
+
+**PT-BR: Segue a lista de ferramentas que estão sendo instaladas. Clique em cada uma delas para ser redirecionado para a página de onde elas estarão sendo instaladas, e em docs para suas documentações.**
+
+**IT: Di seguito è riportato l'elenco degli strumenti in fase di installazione. Fai clic su ciascuno di essi per essere reindirizzato alla pagina in cui vengono installati e ai docs per la loro documentazione.**
+
+- [**Snap**](https://snapcraft.io/docs/installing-snap-on-pop): [docs](https://snapcraft.io/docs)
+- [**Nix**](https://nixos.org/download/): [docs](https://nix.dev/manual/nix/2.18/)
+- [**Flatpak**](https://flatpak.org/setup/Pop!_OS): [docs](https://docs.flatpak.org/en/latest/introduction.html)
+- [**Nvm**](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating): [docs](https://github.com/nvm-sh/nvm/blob/master/README.md)
+- **NodeJs**(EG: note: installed via nvm. PT-BR: obs: instalado via nvm. IT: nota: installato tramite nvm): [docs](https://nodejs.org/pt/learn/getting-started/introduction-to-nodejs)
+- [**Rust**](https://doc.rust-lang.org/book/ch01-01-installation.html): [docs](https://doc.rust-lang.org/book/title-page.html)
+- [**Docker**](https://docs.docker.com/desktop/setup/install/linux/ubuntu/): [docs](https://docs.docker.com/?_gl=1*14yltxd*_gcl_au*ODcyNDA1Njk2LjE3MzI1NTUwMTA.*_ga*OTk2MjY3MTM3LjE3MzI1NTM2MDY.*_ga_XJWPQMJYHQ*MTczMjU1MzYwNS4xLjEuMTczMjU1NTAxMi41OC4wLjA.)
+- [**Visual Studio Code**](https://snapcraft.io/code): [docs](https://code.visualstudio.com/docs)
+- [**Mysql Workbench Community**](https://snapcraft.io/mysql-workbench-community): [docs](https://dev.mysql.com/doc/workbench/en/)
+- [**Insomnia**](https://flathub.org/apps/rest.insomnia.Insomnia): [docs](https://docs.insomnia.rest/insomnia/get-started)
+- [**Google Chrome**](https://flathub.org/apps/com.google.Chrome): [docs](https://developer.chrome.com/docs?hl=pt-br)
+- [**GParted**](https://gparted.org/download.php): [docs](https://gparted.org/documentation.php)
+- [**Timeshift**](https://github.com/teejee2008/timeshift)
+- [**Htop**](https://htop.dev/downloads.html): [docs](https://github.com/htop-dev/htop/blob/main/README.md)
+- [**Neofetch**](https://github.com/dylanaraps/neofetch/wiki/Installation): [docs](https://github.com/dylanaraps/neofetch/wiki)
