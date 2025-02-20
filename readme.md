@@ -4,6 +4,10 @@
 - [Documentação em português](#pt-br)
 - [Documentazione in italiano](#it)
 
+
+OBS: Para desenvolvimento, os módulos que estão declarados ainda estão em fase de teste, leia os comentários nos cabeçalhos dos arquivos para mais informações. 
+
+
 ---
 
 ## **EN:**
