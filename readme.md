@@ -65,6 +65,8 @@ Di seguito è riportato un elenco di tutto ciò che verrà istallato dallo scrip
 - [**Flatpak**](https://flatpak.org/setup/Pop!_OS): [docs](https://docs.flatpak.org/en/latest/introduction.html)
 - [**Nvm**](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating): [docs](https://github.com/nvm-sh/nvm/blob/master/README.md)
 - **NodeJs**(EG: note: installed via nvm. PT-BR: obs: instalado via nvm. IT: nota: istallato tramite nvm): [docs](https://nodejs.org/pt/learn/getting-started/introduction-to-nodejs)
+- [gdb](http://gnu.ist.utl.pt/software/gdb/): [docs](http://gnu.ist.utl.pt/software/gdb/documentation/)
+- [Build-essential](https://packages.debian.org/pt-br/sid/build-essential) (EG:Package documentation is linked on the build-essential getting started page; PT-BR:As documentações dos pacotes se encontram linkadas na página de introdução do build-essential; IT:La documentazione del pacchetto è collegata alla pagina di introduzione di build-essential)
 - [**Rust**](https://doc.rust-lang.org/book/ch01-01-installation.html): [docs](https://doc.rust-lang.org/book/title-page.html)
 - [**Docker**](https://docs.docker.com/desktop/setup/install/linux/ubuntu/): [docs](https://docs.docker.com/?_gl=1*14yltxd*_gcl_au*ODcyNDA1Njk2LjE3MzI1NTUwMTA.*_ga*OTk2MjY3MTM3LjE3MzI1NTM2MDY.*_ga_XJWPQMJYHQ*MTczMjU1MzYwNS4xLjEuMTczMjU1NTAxMi41OC4wLjA.)
 - [**Visual Studio Code**](https://snapcraft.io/code): [docs](https://code.visualstudio.com/docs)
