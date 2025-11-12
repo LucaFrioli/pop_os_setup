@@ -1,0 +1,21 @@
+Realizar adição de ferramentas c e bun dentro do pop_os_setup
+
+Logo temos as seguintes funçõe que irei adicionar :
+
+- Desinstalar as ferramentas de desenvolvimento de C caso elas estejam instaladas [x], realizar a instalação das ferramentas de C [];
+
+- Criar desinstalação do BunJS e Pnpm caso ele esteja Instalado e reinstalação do Bunjs e Pnpm;
+
+- Prototipar função de escolha para instalação ou não de recurso no script;
+
+- Realizar a criação de uma seção de limpeza de disco integrada, no pós instalação;
+    - adicionar a escolha se o usuário gostaria de utilizar cronos para rodar este script a cada tanto tempo;
+
+- definir um gerenciador para otimizar uso de memória e armazenamento em backups com timeshift;
+
+- Melhorar display de execução das instalações em andamento tornando mais simples o acompanhamento do que está ocorrendo, sem perder o toque de ser claro no diplay das informações (resumindo somente organizar);
+
+- Trazer a instalação dos Banco de dados para o script principal;
+    - Analizar a alternativa de já deixar configurados arquivos docker para agilizar o processo + instalação de ext para postgres;
+
+- Prototipar criação de arquivo de pausa e leitura dos dados, melhorando ainda mais a execução do script dentro de um contexto em que precisará reiniciar o computador;

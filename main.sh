@@ -430,7 +430,7 @@ function install_chrome() {
 }
 
 function install_tools() {
-  local tools=("gparted" "timeshift" "htop" "neofetch")
+  local tools=("gparted" "timeshift" "htop" "neofetch" "cheese" "gufw")
 
   apt_update
 
@@ -450,6 +450,31 @@ function install_tools() {
   done
 
   echo "As ferramentas utilitárias foram verificadas."
+  echo "Pressione qualquer tecla para continuar..."
+  read -n 1 -s
+}
+
+function peripheral_hardware() {
+
+  local drivers_and_tools=("fprintd" "libpam-fprintd")
+
+  apt_update
+  echo "Verificando ferramentas e drivers para instalação..."
+  for drivers_and_tools in "${drivers_and_tools[@]}"; do
+    if !command -v "$driverTool" &>/dev/null; then
+      echo "Instalando $driverTool..."
+      sudo apt install -y "$driverTool"
+      if command -v "$driverTool" &>/dev/null; then
+        echo "$driverTool instalado com sucesso."
+      else
+        echo "Erro ao instalar $driverTool. Verifique manualmente."
+      fi
+    else
+      echo "$driverTool já está instalado!"
+    fi
+  done
+
+  echo "Drivers e ferramentas para bom funcionamento de periféricos foram verificadas!"
   echo "Pressione qualquer tecla para continuar..."
   read -n 1 -s
 }
