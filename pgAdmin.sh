@@ -1,7 +1,15 @@
 #!/bin/bash
 ### Temp
 
+function apt_cleaner(){
+  sudo apt clean
+  sudo apt autoclean
+  sudo apt autoremove
+}
+
 function apt_update() {
+  apt_cleaner
+  
   echo "Atualizando repositórios apt ..."
   sudo apt update
 

@@ -2,7 +2,14 @@
 
 #### comando de espera read -n 1 -s
 
+function apt_cleaner(){
+  sudo apt clean
+  sudo apt autoclean
+  sudo apt autoremove
+}
+
 function apt_update() {
+  apt_cleaner
   echo "Atualizando repositórios apt ..."
   sudo apt update
 
@@ -19,6 +26,82 @@ function apt_update_upgrade() {
   echo "Pacotes atualizados com êxito, pressione qualquer tecla para continuar :"
   read -n 1 -s
 }
+
+function setup_journal_vacuum() {
+    echo "Configurando limpeza automática do journal systemd..."
+
+    # Diretório do systemd para usuário root
+    local service_path="/etc/systemd/system/journal-vacuum.service"
+    local timer_path="/etc/systemd/system/journal-vacuum.timer"
+
+    # Criando o arquivo do service
+    sudo tee "$service_path" >/dev/null <<EOF
+[Unit]
+Description=Limpeza automática do journal do systemd
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/journalctl --vacuum-size=100M
+EOF
+
+    # Criando o arquivo do timer
+    sudo tee "$timer_path" >/dev/null <<EOF
+[Unit]
+Description=Executa journal-vacuum.service diariamente
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+EOF
+
+    # Recarrega systemd, habilita e inicia o timer
+    sudo systemctl daemon-reload
+    sudo systemctl enable --now journal-vacuum.timer
+
+    echo "Configuração concluída! O journal será limpo automaticamente uma vez por dia."
+}
+
+
+function setup_tmp_cleanup() {
+    echo "Configurando limpeza automática de /tmp via systemd..."
+
+    local service_path="/etc/systemd/system/tmp-cleanup.service"
+    local timer_path="/etc/systemd/system/tmp-cleanup.timer"
+
+    # Criando arquivo de serviço
+    sudo tee "$service_path" >/dev/null <<EOF
+[Unit]
+Description=Limpeza automática de arquivos antigos em /tmp
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/find /tmp -type f -mtime +10 ! -path "/tmp/.X11-unix/*" ! -path "/tmp/.ICE-unix/*" -exec rm -f {} \;
+EOF
+
+    # Criando arquivo do timer
+    sudo tee "$timer_path" >/dev/null <<EOF
+[Unit]
+Description=Executa tmp-cleanup.service diariamente
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+EOF
+
+    # Recarrega systemd, habilita e inicia o timer
+    sudo systemctl daemon-reload
+    sudo systemctl enable --now tmp-cleanup.timer
+
+    echo "Configuração concluída! A limpeza de /tmp será executada diariamente."
+}
+
 
 function add_curl() {
   apt_update
@@ -80,6 +163,7 @@ function add_snap() {
 
     if command -v snap &>/dev/null; then
       snap --version
+      sudo snap set system refresh.retain=2
       echo "Snap instalado com êxito, pressione qualquer tecla para continuar: "
       read -n 1 -s
     fi
@@ -480,9 +564,9 @@ function peripheral_hardware() {
 }
 
 apt_update_upgrade
+setup_journal_vacuum
 add_curl
 add_snap
-add_nix
 
 apt_update_upgrade
 remove_node
